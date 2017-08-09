@@ -4,7 +4,7 @@ ENV container docker
 LABEL name="Centos7 Ansible Base Image" \
     vendor="Centos” \
     license="GPLv2" \
-build-date="20170228”
+build-date="20170809”
 
 RUN yum -y update \
     && yum -y install wget \
@@ -23,13 +23,5 @@ RUN yum -y install net-tools
 RUN yum -y install git
 RUN yum -y install vim
 RUN yum -y install gcc gcc+ gcc-c++ automake autoconf libtool make 
-RUN yum -y install nodejs \
-    && npm install -g cnpm \
-    && cnpm install -g strongloop \
-    && cnpm install -g apiconnect \
-    && cnpm install -g strong-pm
-#ssl-pm-install --systemd && /usr/bin/systemctl start strong-pm 
-#/usr/bin/systemctl start strong-pm
-# cnpm install -g pm2  n 
-CMD ["/bin/bash", "-c", "echo FROM daocloud.io/centos:7"]
+CMD ["/bin/bash", "-c", "echo FROM daocloud.io/centos:7 osmeteor-centos7-ansible”]
 
